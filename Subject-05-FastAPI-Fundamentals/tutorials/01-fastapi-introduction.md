@@ -39,19 +39,19 @@ Compared to other frameworks like Flask and Django:
 ### Installation
 ```bash
 # Create virtual environment
-python -m venv venv
+uv venv
 
-# Activate virtual environment
+# Activate virtual environment (optional - uv run is preferred)
 # Windows:
-venv\Scripts\activate
+.venv\Scripts\activate
 # Linux/macOS:
-source venv/bin/activate
+source .venv/bin/activate
 
 # Install FastAPI and Uvicorn
-pip install fastapi uvicorn
+uv add fastapi uvicorn
 
 # Optional: Install additional dependencies
-pip install pydantic requests
+uv add pydantic requests
 ```
 
 ## Your First FastAPI Application

@@ -238,7 +238,7 @@ CREATE EXTENSION IF NOT EXISTS "unaccent";
 cd backend
 
 # Install Python dependencies
-pip install -r requirements.txt
+uv add -r requirements.txt
 
 # Initialize Alembic (if not already done)
 alembic init migrations
@@ -276,7 +276,7 @@ docker-compose up postgres redis -d
 
 # Terminal 2: Backend API
 cd backend
-pip install -r requirements.txt
+uv add -r requirements.txt
 alembic upgrade head
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
@@ -287,7 +287,7 @@ npm run dev
 
 # Terminal 4: Crawler Service
 cd crawler
-pip install -r requirements.txt
+uv add -r requirements.txt
 python -m crawlers.main
 ```
 

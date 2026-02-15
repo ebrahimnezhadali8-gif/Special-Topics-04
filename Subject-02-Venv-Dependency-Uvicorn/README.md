@@ -2,11 +2,11 @@
 
 ## Overview
 
-This subject focuses on modern Python development practices with special emphasis on **UV**, a high-performance package manager. While traditional tools like pip and venv are mentioned for context, the primary focus is on UV's workflow and benefits.
+This subject focuses on modern Python development practices with special emphasis on **UV**, a high-performance package manager. While traditional tools like pip and uv are mentioned for context, the primary focus is on UV's workflow and benefits.
 
 ## Learning Path
 
-### 1. Environment Isolation (venv)
+### 1. Environment Isolation (uv)
 - Understanding why isolated environments matter
 - Creating and managing virtual environments
 - Traditional approach vs modern tooling
@@ -25,7 +25,7 @@ This subject focuses on modern Python development practices with special emphasi
 
 ## Key Topics
 
-- **venv**: Environment isolation basics
+- **uv**: Environment isolation basics
 - **Dependency Management**: Understanding package relationships
 - **UV**: Modern Python packaging (main focus)
 - **FastAPI + Uvicorn**: Web application development
@@ -33,29 +33,29 @@ This subject focuses on modern Python development practices with special emphasi
 ## Materials Structure
 
 ```
-Subject-02-Venv-Dependency-Uvicorn/
+Subject-02-uv-Dependency-Uvicorn/
 ├── README.md                           # This overview
 ├── SCRATCHPAD.md                       # Course planning document
 ├── installation/
 │   ├── python-setup.md                 # Python installation
-│   ├── venv-setup.md                   # venv basics
+│   ├── uv-setup.md                     # uv basics
 │   └── uv-setup.md                     # UV installation guide
 ├── tutorials/
-│   ├── 01-python-environments.md       # venv tutorial
+│   ├── 01-python-environments.md       # uv tutorial
 │   ├── 02-dependency-management.md     # Dependency concepts
 │   ├── 03-uv-package-manager.md        # UV introduction
 │   ├── 04-uv-project-creation.md       # Creating UV projects
 │   ├── 05-uv-dependency-management.md  # Managing dependencies
 │   └── 06-uvicorn-with-uv.md           # FastAPI + Uvicorn
 ├── workshops/
-│   ├── workshop-01-venv-tutorial.md    # venv hands-on session
+│   ├── workshop-01-uv-tutorial.md      # uv hands-on session
 │   ├── workshop-02-uv-installation.md  # UV installation
 │   ├── workshop-03-uv-project-init.md  # First UV project
 │   ├── workshop-04-uv-add-dependencies.md # Dependency management
 │   ├── workshop-05-uv-run-scripts.md   # Running with UV
 │   └── workshop-06-uvicorn-uv-project.md # Complete application
 ├── homeworks/
-│   ├── homework-01-venv-exercises.md   # venv exercises
+│   ├── homework-01-uv-exercises.md     # uv exercises
 │   ├── homework-02-uv-project-setup.md # UV project creation
 │   ├── homework-03-dependency-management.md # Dependency tasks
 │   └── homework-04-fastapi-uvicorn.md  # Complete application
@@ -65,7 +65,7 @@ Subject-02-Venv-Dependency-Uvicorn/
 │   ├── comparison-tools.md             # UV vs other tools
 │   └── troubleshooting.md              # Common issues
 └── assessments/
-    ├── quiz-venv-concepts.md           # venv quiz
+    ├── quiz-uv-concepts.md           # uv quiz
     ├── quiz-uv-fundamentals.md         # UV fundamentals quiz
     └── project-checklist.md            # Project completion checklist
 ```
@@ -99,7 +99,7 @@ This subject places special emphasis on **UV** as the primary package management
 
 ## Progression
 
-1. **Start with venv** (Workshop 1) - Understand environment isolation
+1. **Start with uv** (Workshop 1) - Understand environment isolation
 2. **Learn dependency concepts** (Tutorial 2) - Why modern tools matter
 3. **Master UV fundamentals** (Tutorials 3-6) - Core UV usage
 4. **Hands-on practice** (Workshops 2-6) - Build real applications
@@ -109,7 +109,7 @@ This subject places special emphasis on **UV** as the primary package management
 
 | Tool | Coverage Level | Purpose |
 |------|----------------|---------|
-| **venv** | Basic concepts | Environment isolation |
+| **uv** | Basic concepts | Environment isolation |
 | **pip** | Mentioned for comparison | Traditional package installation |
 | **UV** | **Primary focus** | Modern package management |
 | **FastAPI** | Application examples | Web framework |
@@ -124,4 +124,4 @@ This subject places special emphasis on **UV** as the primary package management
 
 ## Next Steps
 
-Begin with **Workshop 1: venv Tutorial** to understand environment isolation, then progress through UV-focused materials to master modern Python package management.
+Begin with **Workshop 1: uv Tutorial** to understand environment isolation, then progress through UV-focused materials to master modern Python package management.

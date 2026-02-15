@@ -29,11 +29,11 @@ mkdir asyncpg-pooling-workshop
 cd asyncpg-pooling-workshop
 
 # Create virtual environment
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+uv venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
 
 # Install dependencies
-pip install asyncpg psycopg2-binary aiohttp uvicorn fastapi pydantic
+uv add asyncpg psycopg2-binary aiohttp uvicorn fastapi pydantic
 
 # Create project structure
 mkdir -p src tests config

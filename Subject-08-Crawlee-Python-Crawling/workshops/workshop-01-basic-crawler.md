@@ -28,11 +28,11 @@ mkdir basic-crawler-workshop
 cd basic-crawler-workshop
 
 # Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+uv venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
 # Install dependencies
-pip install crawlee beautifulsoup4 requests python-dotenv
+uv add crawlee beautifulsoup4 requests python-dotenv
 
 # Create project structure
 mkdir -p crawlers extractors storage config tests data
@@ -1177,7 +1177,7 @@ if __name__ == "__main__":
 
 ```bash
 # Activate virtual environment
-source venv/bin/activate
+source .venv/bin/activate
 
 # Test the crawler components
 python test_crawler.py

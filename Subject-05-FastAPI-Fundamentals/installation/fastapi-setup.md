@@ -39,7 +39,7 @@ brew upgrade python
 **Linux (Ubuntu/Debian):**
 ```bash
 sudo apt update
-sudo apt install python3 python3-pip python3-venv
+sudo apt install python3 python3-pip python3-uv
 ```
 
 ---
@@ -52,20 +52,16 @@ sudo apt install python3 python3-pip python3-venv
 - Keep system Python clean
 - Reproducible environments
 
-### Create Virtual Environment
+### Initialize UV Project
 ```bash
 # Navigate to project directory
 cd your-project-directory
 
+# Initialize UV project (creates pyproject.toml)
+uv init
+
 # Create virtual environment
-python -m venv venv
-
-# Activate virtual environment
-# Windows:
-venv\Scripts\activate
-
-# macOS/Linux:
-source venv/bin/activate
+uv venv
 ```
 
 ### Verify Activation
@@ -73,7 +69,7 @@ source venv/bin/activate
 # Check which Python is being used
 which python
 
-# Should show path to venv/bin/python or venv\Scripts\python.exe
+# Should show path to .venv/bin/python or .venv\Scripts\python.exe
 
 # Check pip location
 which pip
@@ -90,29 +86,26 @@ deactivate
 
 ### Basic Installation
 ```bash
-# Activate virtual environment first
-source venv/bin/activate  # or venv\Scripts\activate on Windows
-
 # Install FastAPI and server
-pip install fastapi uvicorn
+uv add fastapi uvicorn
 
 # Install additional dependencies
-pip install pydantic requests httpx
+uv add pydantic requests httpx
 ```
 
 ### Development Dependencies
 ```bash
 # Install development tools
-pip install --upgrade pip
+uv add --upgrade pip
 
 # Code formatting and linting
-pip install black flake8 isort
+uv add black flake8 isort
 
 # Testing
-pip install pytest pytest-asyncio httpx
+uv add pytest pytest-asyncio httpx
 
 # Documentation
-pip install mkdocs mkdocs-material
+uv add mkdocs mkdocs-material
 ```
 
 ---
@@ -123,15 +116,15 @@ pip install mkdocs mkdocs-material
 ```bash
 mkdir fastapi-project
 cd fastapi-project
-python -m venv venv
-source venv/bin/activate  # Linux/macOS
-# or venv\Scripts\activate  # Windows
+uv venv
+source .venv/bin/activate  # Linux/macOS
+# or .venv\Scripts\activate  # Windows
 ```
 
 ### Basic Project Structure
 ```
 fastapi-project/
-├── venv/                    # Virtual environment
+├── .venv/                    # Virtual environment
 ├── app/
 │   ├── __init__.py
 │   ├── main.py             # FastAPI application
@@ -180,7 +173,7 @@ isort==5.12.0
 ### .gitignore
 ```
 # Virtual environment
-venv/
+uv/
 env/
 ENV/
 
@@ -244,7 +237,7 @@ async def health_check():
 Create `.vscode/settings.json`:
 ```json
 {
-    "python.defaultInterpreterPath": "./venv/bin/python",
+    "python.defaultInterpreterPath": "./.venv/bin/python",
     "python.linting.enabled": true,
     "python.linting.flake8Enabled": true,
     "python.formatting.provider": "black",
@@ -258,7 +251,7 @@ Create `.vscode/settings.json`:
 ### Code Formatting Setup
 ```bash
 # Install pre-commit hooks (optional)
-pip install pre-commit
+uv add pre-commit
 
 # Create .pre-commit-config.yaml
 cat > .pre-commit-config.yaml << EOF
@@ -292,11 +285,8 @@ pre-commit install
 
 ### Development Server
 ```bash
-# Activate virtual environment
-source venv/bin/activate
-
-# Run with uvicorn
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+# Run with uvicorn (uv handles the virtual environment)
+uv run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 ### Access Application
@@ -392,7 +382,7 @@ DATABASE_URL=sqlite:///./test.db
 
 Install python-dotenv:
 ```bash
-pip install python-dotenv
+uv add python-dotenv
 ```
 
 Use in application:
@@ -416,10 +406,10 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 **Module not found errors:**
 ```bash
 # Ensure virtual environment is activated
-source venv/bin/activate
+source .venv/bin/activate
 
 # Reinstall dependencies
-pip install -r requirements.txt
+uv add -r requirements.txt
 ```
 
 **Port already in use:**
@@ -448,7 +438,7 @@ uvicorn app.main:app --reload --port 8001
 ### Daily Development
 ```bash
 # Activate environment
-source venv/bin/activate
+source .venv/bin/activate
 
 # Run linter and formatter
 black . && isort . && flake8 .
@@ -488,5 +478,5 @@ git commit -m "Your commit message"
 - [FastAPI Documentation](https://fastapi.tiangolo.com/)
 - [Pydantic Documentation](https://pydantic-docs.helpmanual.io/)
 - [Uvicorn Documentation](https://www.uvicorn.org/)
-- [Python Virtual Environments](https://docs.python.org/3/tutorial/venv.html)
+- [Python Virtual Environments](https://docs.python.org/3/tutorial/uv.html)
 - [VS Code Python Tutorial](https://code.visualstudio.com/docs/python/python-tutorial)

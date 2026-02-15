@@ -1,9 +1,9 @@
-# Tutorial 1: Python Virtual Environments with venv
+# Tutorial 1: Python Virtual Environments with uv
 
 ## 🎯 Learning Objectives
 By the end of this tutorial, you will understand:
 - What virtual environments are and why they're essential
-- How to create and manage virtual environments using venv
+- How to create and manage virtual environments using uv
 - The difference between global and isolated package installations
 - Best practices for virtual environment management
 
@@ -36,34 +36,34 @@ Without virtual environments, all projects share the same global Python installa
 
 ---
 
-## 🛠️ Creating Virtual Environments with venv
+## 🛠️ Creating Virtual Environments with uv
 
-### Basic venv Usage
+### Basic uv Usage
 
 #### 1. Create a Virtual Environment
 ```bash
 # Navigate to your project directory
 cd my-project
 
-# Create a virtual environment named 'venv'
-python -m venv venv
+# Create a virtual environment named 'uv'
+uv venv
 ```
 
 #### 2. Activate the Virtual Environment
 
 **Windows (Command Prompt):**
 ```cmd
-venv\Scripts\activate
+.venv\Scripts\activate
 ```
 
 **Windows (PowerShell):**
 ```powershell
-venv\Scripts\Activate.ps1
+.venv\Scripts\activate.ps1
 ```
 
 **macOS/Linux:**
 ```bash
-source venv/bin/activate
+source .venv/bin/activate
 ```
 
 #### 3. Verify Activation
@@ -74,13 +74,13 @@ which python  # or where python on Windows
 # Check pip location
 which pip     # or where pip on Windows
 
-# Your paths should now point to the venv directory
+# Your paths should now point to the uv directory
 ```
 
 #### 4. Install Packages
 ```bash
 # Install packages (they go into the virtual environment)
-pip install requests fastapi uvicorn
+uv add requests fastapi uvicorn
 
 # List installed packages
 pip list
@@ -91,11 +91,11 @@ pip list
 deactivate
 ```
 
-### 📁 Project Structure with venv
+### 📁 Project Structure with uv
 
 ```
 my-project/
-├── venv/                    # Virtual environment (don't commit!)
+├── .venv/                    # Virtual environment (don't commit!)
 ├── main.py                  # Your Python code
 ├── requirements.txt         # Dependencies list
 └── README.md               # Project documentation
@@ -109,7 +109,7 @@ my-project/
 
 #### Method 1: Manual Creation
 ```bash
-# After installing packages in activated venv
+# After installing packages in activated uv
 pip freeze > requirements.txt
 ```
 
@@ -124,10 +124,10 @@ echo "requests==2.31.0" >> requirements.txt
 ### Installing from Requirements
 ```bash
 # Activate virtual environment first
-source venv/bin/activate  # or venv\Scripts\activate on Windows
+source .venv/bin/activate  # or .venv\Scripts\activate on Windows
 
 # Install all dependencies
-pip install -r requirements.txt
+uv add -r requirements.txt
 ```
 
 ---
@@ -142,13 +142,13 @@ mkdir my-fastapi-app
 cd my-fastapi-app
 
 # 2. Create virtual environment
-python -m venv venv
+uv venv
 
 # 3. Activate environment
-source venv/bin/activate  # Windows: venv\Scripts\activate
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
 
 # 4. Install dependencies
-pip install fastapi uvicorn
+uv add fastapi uvicorn
 
 # 5. Develop your application
 # ... write code ...
@@ -165,38 +165,38 @@ deactivate
 ```bash
 # Project A
 cd project-a
-source venv/bin/activate
+source .venv/bin/activate
 # Work on project A...
 
 # Switch to Project B
 deactivate
 cd ../project-b
-source venv/bin/activate
+source .venv/bin/activate
 # Work on project B...
 ```
 
 ---
 
-## 🏗️ Advanced venv Usage
+## 🏗️ Advanced uv Usage
 
 ### Custom Environment Names
 
 ```bash
 # Create environment with custom name
-python -m venv myenv
+uv venv myenv
 
-# Or use .venv (common convention)
-python -m venv .venv
+# Or use .uv (common convention)
+uv venv .uv
 ```
 
 ### Environment Variables
 
 ```bash
 # Create environment with system packages access
-python -m venv --system-site-packages venv
+uv venv --system-site-packages
 
 # Clear existing environment
-python -m venv --clear venv
+uv venv --clear
 ```
 
 ### Checking Environment Status
@@ -216,15 +216,15 @@ python -c "import sys; print(sys.path[:3])"
 ### 1. Permission Errors (Windows)
 ```cmd
 # Run Command Prompt as Administrator, or use:
-python -m venv venv --clear
+uv venv --clear
 ```
 
 ### 2. Activation Not Working
 ```bash
 # Ensure you're using the correct activation script
-# Windows PowerShell: venv\Scripts\Activate.ps1
-# Windows CMD: venv\Scripts\activate.bat
-# Linux/macOS: source venv/bin/activate
+# Windows PowerShell: .venv\Scripts\activate.ps1
+# Windows CMD: .venv\Scripts\activate.bat
+# Linux/macOS: source .venv/bin/activate
 ```
 
 ### 3. Packages Not Found After Activation
@@ -233,14 +233,14 @@ python -m venv venv --clear
 which python
 which pip
 
-# They should point to your venv directory
+# They should point to your uv directory
 ```
 
-### 4. venv Module Not Found
+### 4. uv Module Not Found
 ```bash
-# venv is included with Python 3.3+
-# If missing, you might need to install python3-venv
-# Ubuntu/Debian: sudo apt install python3-venv
+# uv is included with Python 3.3+
+# If missing, you might need to install python3-uv
+# Ubuntu/Debian: sudo apt install python3-uv
 ```
 
 ---
@@ -250,11 +250,11 @@ which pip
 ### 1. Environment Per Project
 ```
 project-a/
-├── venv/
+├── .venv/
 └── src/
 
 project-b/
-├── venv/
+├── .venv/
 └── src/
 ```
 
@@ -262,8 +262,8 @@ project-b/
 Create `.gitignore`:
 ```
 # Virtual environments
-venv/
-.venv/
+uv/
+.uv/
 env/
 ENV/
 
@@ -284,9 +284,9 @@ pytest==7.4.3  # For testing
 ### 4. Document Setup Process
 ```markdown
 # Setup
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install -r requirements.txt
+uv venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+uv add -r requirements.txt
 ```
 
 ### 5. Keep Requirements Updated
@@ -297,12 +297,12 @@ pip freeze > requirements.txt
 
 ---
 
-## 🔍 Understanding venv Internally
+## 🔍 Understanding uv Internally
 
 ### What's Inside a Virtual Environment?
 
 ```
-venv/
+.venv/
 ├── bin/           # Executables (Linux/macOS)
 │   ├── python
 │   ├── pip
@@ -313,15 +313,15 @@ venv/
 │   └── activate.bat
 ├── include/       # Header files
 ├── lib/           # Python libraries
-└── pyvenv.cfg     # Configuration
+└── pyuv.cfg     # Configuration
 ```
 
 ### How Activation Works
 
 Activation modifies environment variables:
-- `PATH`: Adds venv executables first
-- `VIRTUAL_ENV`: Set to venv path
-- `PYTHONHOME`: Cleared (uses venv Python)
+- `PATH`: Adds uv executables first
+- `VIRTUAL_ENV`: Set to uv path
+- `PYTHONHOME`: Cleared (uses uv Python)
 - `PS1`: Modified prompt (bash)
 
 ---
@@ -337,14 +337,14 @@ Virtual environments are essential for:
 ### Key Commands
 ```bash
 # Create
-python -m venv venv
+uv venv
 
 # Activate
-source venv/bin/activate  # Linux/macOS
-venv\Scripts\activate     # Windows
+source .venv/bin/activate  # Linux/macOS
+.venv\Scripts\activate     # Windows
 
 # Install packages
-pip install package-name
+uv add package-name
 
 # Save dependencies
 pip freeze > requirements.txt

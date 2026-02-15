@@ -34,7 +34,7 @@ users = await conn.fetch("SELECT * FROM users")
 
 ### Installation
 ```bash
-pip install asyncpg
+uv add asyncpg
 ```
 
 ### Basic Connection

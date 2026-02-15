@@ -26,11 +26,11 @@ Create a comprehensive testing environment for the articles API:
 ```bash
 mkdir testing-documentation-workshop
 cd testing-documentation-workshop
-python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
+uv venv
+source .venv/bin/activate  # or .venv\Scripts\activate on Windows
 
-pip install fastapi uvicorn sqlalchemy pydantic[email] alembic
-pip install pytest pytest-asyncio pytest-cov httpx pytest-mock factory-boy faker
+uv add fastapi uvicorn sqlalchemy pydantic[email] alembic
+uv add pytest pytest-asyncio pytest-cov httpx pytest-mock factory-boy faker
 
 # Copy the articles API from previous workshop
 # (Assume we have the complete articles API from workshop 3)
@@ -866,9 +866,9 @@ jobs:
 
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install pytest pytest-cov
+        python -m uv add --upgrade pip
+        uv add -r requirements.txt
+        uv add pytest pytest-cov
 
     - name: Run tests
       run: |
@@ -892,7 +892,7 @@ jobs:
 
     - name: Install linting tools
       run: |
-        pip install black flake8 isort
+        uv add black flake8 isort
 
     - name: Run linters
       run: |
@@ -913,7 +913,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt
+        uv add -r requirements.txt
 
     - name: Generate API docs
       run: |
@@ -944,7 +944,7 @@ addopts = -v --cov=app --cov-report=html --cov-report=term-missing
 [coverage:run]
 source = app
 omit =
-    */venv/*
+    */uv/*
     */__pycache__/*
     */tests/*
 
@@ -960,7 +960,7 @@ exclude_lines =
 [flake8]
 max-line-length = 88
 extend-ignore = E203, W503
-exclude = venv, __pycache__, .pytest_cache
+exclude = uv, __pycache__, .pytest_cache
 
 [isort]
 profile = black

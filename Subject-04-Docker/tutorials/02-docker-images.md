@@ -136,7 +136,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN uv add --no-cache-dir -r requirements.txt
 
 # Copy application code
 COPY . .
@@ -234,7 +234,7 @@ __pycache__/
 *.pyd
 .Python
 env/
-venv/
+uv/
 ```
 
 ## Image Security

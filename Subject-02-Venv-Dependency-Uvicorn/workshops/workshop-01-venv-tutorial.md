@@ -1,7 +1,7 @@
-# Workshop 1: venv Tutorial Session - Python Environment Isolation
+# Workshop 1: uv Tutorial Session - Python Environment Isolation
 
 ## 🎯 Objective
-By the end of this workshop, students will understand what Python virtual environments are, why they're important, and how to create and manage them using venv.
+By the end of this workshop, students will understand what Python virtual environments are, why they're important, and how to create and manage them using uv.
 
 ## 📋 Prerequisites
 - Python 3.8+ installed on your system
@@ -11,11 +11,11 @@ By the end of this workshop, students will understand what Python virtual enviro
 ## 📚 Session Overview
 **Duration**: 45-60 minutes
 **Format**: Interactive tutorial with live demonstrations
-**Focus**: Understanding venv concepts and practical usage
+**Focus**: Understanding uv concepts and practical usage
 
 ---
 
-## 🔍 What is venv? Why Do We Need It?
+## 🔍 What is uv? Why Do We Need It?
 
 ### The Problem: Global Package Conflicts
 ```python
@@ -41,7 +41,7 @@ System Python (Global)
 │   └── other dependencies
 ```
 
-### Key Benefits of venv
+### Key Benefits of uv
 1. **Isolation**: Each project has its own dependencies
 2. **Reproducibility**: Same environment across different machines
 3. **No Conflicts**: Different projects can use different package versions
@@ -66,14 +66,14 @@ cd my-first-project
 
 ### Step 3: Create Virtual Environment
 ```bash
-# Create a virtual environment named 'venv'
-python -m venv venv
+# Create a virtual environment named 'uv'
+uv venv
 
-# This creates a 'venv' folder in your project directory
+# This creates a 'uv' folder in your project directory
 ```
 
 **What happens when you run this command?**
-- Python creates a new folder called `venv`
+- Python creates a new folder called `uv`
 - Inside this folder: complete Python installation
 - Isolated from system Python packages
 
@@ -81,28 +81,28 @@ python -m venv venv
 
 #### Windows (Command Prompt):
 ```cmd
-venv\Scripts\activate
+.venv\Scripts\activate
 ```
 
 #### Windows (PowerShell):
 ```powershell
-venv\Scripts\Activate.ps1
+.venv\Scripts\activate.ps1
 ```
 
 #### macOS/Linux:
 ```bash
-source venv/bin/activate
+source .venv/bin/activate
 ```
 
 **What changes when activated?**
-- Command prompt shows `(venv)` at the beginning
+- Command prompt shows `(uv)` at the beginning
 - `python` and `pip` now point to virtual environment
 - Packages installed will go to this environment
 
 ### Step 5: Verify Activation
 ```bash
 # Check which Python we're using
-which python  # Shows path to venv python
+which python  # Shows path to uv python
 python --version
 
 # Check pip location
@@ -113,7 +113,7 @@ pip --version
 ### Step 6: Install Packages
 ```bash
 # Install a package
-pip install requests
+uv add requests
 
 # Check installed packages
 pip list
@@ -127,17 +127,17 @@ pip show requests
 # Deactivate the virtual environment
 deactivate
 
-# Notice: (venv) disappears from command prompt
+# Notice: (uv) disappears from command prompt
 ```
 
 ---
 
-## 🔍 Understanding the venv Folder Structure
+## 🔍 Understanding the uv Folder Structure
 
-After creating venv, explore the folder structure:
+After creating uv, explore the folder structure:
 
 ```
-venv/
+uv/
 ├── bin/              # macOS/Linux executables
 │   ├── python        # Python executable
 │   ├── pip           # pip executable
@@ -148,25 +148,25 @@ venv/
 │   └── activate.bat  # Activation script
 ├── Lib/              # Python standard library
 ├── site-packages/    # Installed packages go here
-└── pyvenv.cfg        # Configuration file
+└── pyuv.cfg        # Configuration file
 ```
 
 ---
 
-## 📝 Common venv Commands Cheat Sheet
+## 📝 Common uv Commands Cheat Sheet
 
 ```bash
 # Create virtual environment
-python -m venv venv
+uv venv
 
 # Activate (Windows CMD)
-venv\Scripts\activate
+.venv\Scripts\activate
 
 # Activate (Windows PowerShell)
-venv\Scripts\Activate.ps1
+.venv\Scripts\activate.ps1
 
 # Activate (macOS/Linux)
-source venv/bin/activate
+source .venv/bin/activate
 
 # Deactivate
 deactivate
@@ -181,7 +181,7 @@ which pip
 pip list
 
 # Install package
-pip install package-name
+uv add package-name
 
 # Uninstall package
 pip uninstall package-name
@@ -192,53 +192,53 @@ pip uninstall package-name
 ## 🚨 Common Issues and Solutions
 
 ### Issue 1: Permission Denied (Windows)
-**Problem**: `venv\Scripts\activate` gives permission error
+**Problem**: `.venv\Scripts\activate` gives permission error
 **Solution**: Run Command Prompt as Administrator, or use PowerShell with execution policy
 
 ### Issue 2: Command Not Found
-**Problem**: `python -m venv venv` says command not found
+**Problem**: `uv venv` says command not found
 **Solution**: Make sure Python is installed and in PATH
 
 ### Issue 3: Wrong Python Version
 **Problem**: Virtual environment uses wrong Python version
-**Solution**: Specify Python version: `python3 -m venv venv`
+**Solution**: Specify Python version: `uv venv`
 
 ### Issue 4: Packages Still Install Globally
-**Problem**: `pip install` installs to system Python
-**Solution**: Make sure environment is activated (check `(venv)` in prompt)
+**Problem**: `uv add` installs to system Python
+**Solution**: Make sure environment is activated (check `(uv)` in prompt)
 
 ---
 
 ## 🎯 Best Practices
 
-### 1. One venv Per Project
+### 1. One uv Per Project
 ```
 project-a/
-├── venv/
+├── .venv/
 ├── src/
 └── requirements.txt
 
 project-b/
-├── venv/
+├── .venv/
 ├── src/
 └── requirements.txt
 ```
 
-### 2. Never Commit venv Folder
-Add `venv/` to `.gitignore`
+### 2. Never Commit uv Folder
+Add `.venv/` to `.gitignore`
 
 ### 3. Use Descriptive Names When Needed
 ```bash
 # For different environments
-python -m venv venv-dev
-python -m venv venv-prod
+uv venv-dev
+uv venv-prod
 ```
 
 ### 4. Always Activate Before Working
 ```bash
 # Habit: cd to project, then activate
 cd myproject
-source venv/bin/activate  # or venv\Scripts\activate on Windows
+source .venv/bin/activate  # or .venv\Scripts\activate on Windows
 ```
 
 ---
@@ -249,9 +249,9 @@ source venv/bin/activate  # or venv\Scripts\activate on Windows
 ```bash
 mkdir django-blog
 cd django-blog
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-pip install django
+uv venv
+source .venv/bin/activate  # Linux/Mac
+uv add django
 django-admin startproject blog .
 python manage.py runserver
 ```
@@ -260,9 +260,9 @@ python manage.py runserver
 ```bash
 mkdir fastapi-app
 cd fastapi-app
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-pip install fastapi uvicorn
+uv venv
+source .venv/bin/activate  # Linux/Mac
+uv add fastapi uvicorn
 # Create main.py with FastAPI app
 uvicorn main:app --reload
 ```
@@ -271,9 +271,9 @@ uvicorn main:app --reload
 ```bash
 mkdir data-analysis
 cd data-analysis
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-pip install pandas numpy matplotlib jupyter
+uv venv
+source .venv/bin/activate  # Linux/Mac
+uv add pandas numpy matplotlib jupyter
 jupyter notebook
 ```
 
@@ -283,10 +283,10 @@ jupyter notebook
 
 After completing this workshop, you should be able to:
 
-- [ ] Create a new virtual environment with `python -m venv venv`
+- [ ] Create a new virtual environment with `uv venv`
 - [ ] Activate the environment (platform-specific command)
-- [ ] Verify activation by checking `(venv)` in command prompt
-- [ ] Install packages with `pip install` while activated
+- [ ] Verify activation by checking `(uv)` in command prompt
+- [ ] Install packages with `uv add` while activated
 - [ ] Confirm packages are installed in the virtual environment
 - [ ] Deactivate the environment with `deactivate`
 - [ ] Explain why virtual environments are important
@@ -295,23 +295,23 @@ After completing this workshop, you should be able to:
 
 ## 🎓 Key Takeaways
 
-1. **venv creates isolated Python environments** for each project
+1. **uv creates isolated Python environments** for each project
 2. **Activation changes which Python/pip you're using**
-3. **Packages installed in venv stay in that environment**
+3. **Packages installed in uv stay in that environment**
 4. **Deactivation returns to system Python**
-5. **One venv per project** prevents dependency conflicts
+5. **One uv per project** prevents dependency conflicts
 
 ---
 
 ## 🚀 Next Steps
 
-Now that you understand venv, in the next session we'll explore:
+Now that you understand uv, in the next session we'll explore:
 - What dependency management really means
 - Why modern tools like UV are better than traditional pip
 - How to use UV for faster, more reliable package management
 
 ## 📚 Additional Resources
 
-- [Python venv Documentation](https://docs.python.org/3/library/venv.html)
+- [Python uv Documentation](https://docs.python.org/3/library/uv.html)
 - [Real Python: Virtual Environments](https://realpython.com/python-virtual-environments-a-primer/)
 - [Python Packaging Guide](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)

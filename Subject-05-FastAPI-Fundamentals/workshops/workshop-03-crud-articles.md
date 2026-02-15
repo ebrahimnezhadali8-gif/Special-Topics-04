@@ -25,9 +25,9 @@ By the end of this workshop, you will be able to:
 ```bash
 mkdir crud-articles-api
 cd crud-articles-api
-python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
-pip install fastapi uvicorn sqlalchemy pydantic[email] alembic pytest httpx
+uv venv
+source .venv/bin/activate  # or .venv\Scripts\activate on Windows
+uv add fastapi uvicorn sqlalchemy pydantic[email] alembic pytest httpx
 
 mkdir -p app/{models,schemas,crud,routes,tests}
 touch app/__init__.py app/main.py app/database.py

@@ -34,7 +34,7 @@ with Session() as session:
 
 ### Installation
 ```bash
-pip install sqlalchemy psycopg2-binary
+uv add sqlalchemy psycopg2-binary
 ```
 
 ### Basic Setup

@@ -24,7 +24,7 @@ Alembic is a database migration tool for SQLAlchemy that provides:
 
 ### Installation
 ```bash
-pip install alembic
+uv add alembic
 ```
 
 ### Initialize Alembic
@@ -682,8 +682,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt
-        pip install alembic
+        uv add -r requirements.txt
+        uv add alembic
 
     - name: Check migrations
       run: |

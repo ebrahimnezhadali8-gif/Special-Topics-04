@@ -778,7 +778,7 @@ WORKDIR /app
 
 # Copy requirements first for better caching
 COPY requirements.txt .
-RUN pip install --no-cache-dir --user -r requirements.txt
+RUN uv add --no-cache-dir --user -r requirements.txt
 
 # Copy application code
 COPY --chown=appuser:appuser . .

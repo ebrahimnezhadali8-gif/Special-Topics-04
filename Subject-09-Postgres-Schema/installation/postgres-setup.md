@@ -82,15 +82,15 @@ GRANT ALL PRIVILEGES ON DATABASE myproject TO myuser;
 ### Install Dependencies
 ```bash
 # Create virtual environment
-python -m venv postgres-env
+uv venv postgres-env
 source postgres-env/bin/activate  # Linux/macOS
 # or postgres-env\Scripts\activate  # Windows
 
 # Install packages
-pip install psycopg2-binary sqlalchemy asyncpg alembic
+uv add psycopg2-binary sqlalchemy asyncpg alembic
 
 # Development tools
-pip install pgcli ipython jupyter
+uv add pgcli ipython jupyter
 ```
 
 ### Database Connection
@@ -160,7 +160,7 @@ postgres-project/
 
 ```bash
 # Install alembic
-pip install alembic
+uv add alembic
 
 # Initialize alembic
 alembic init database/migrations

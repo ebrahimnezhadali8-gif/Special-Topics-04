@@ -19,9 +19,10 @@ mkdir etl-pipeline
 cd etl-pipeline
 
 # Create virtual environment
-python -m venv venv
-source venv/bin/activate  # Linux/macOS
-# or venv\Scripts\activate  # Windows
+uv init
+uv venv
+source .venv/bin/activate  # Linux/macOS
+# or .venv\Scripts\activate  # Windows
 
 # Create project structure
 mkdir -p \
@@ -43,19 +44,19 @@ mkdir -p \
 
 ```bash
 # Core ETL dependencies
-pip install crawlee fastapi uvicorn sqlalchemy asyncpg alembic
+uv add crawlee fastapi uvicorn sqlalchemy asyncpg alembic
 
 # Data processing
-pip install pandas numpy pydantic[email]
+uv add pandas numpy pydantic[email]
 
 # Additional tools
-pip install loguru python-dotenv aiofiles schedule
+uv add loguru python-dotenv aiofiles schedule
 
 # Testing and development
-pip install pytest pytest-asyncio httpx black flake8
+uv add pytest pytest-asyncio httpx black flake8
 
 # Optional: Monitoring
-pip install prometheus-client
+uv add prometheus-client
 ```
 
 ---

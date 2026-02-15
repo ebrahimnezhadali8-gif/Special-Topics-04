@@ -55,10 +55,10 @@ make && sudo make install
 
 ### Install Dependencies
 ```bash
-pip install psycopg2-binary asyncpg sqlalchemy
-pip install pgcli  # Enhanced CLI
-pip install pg_activity  # Activity monitoring
-pip install poormanspgtune  # Configuration tuning
+uv add psycopg2-binary asyncpg sqlalchemy
+uv add pgcli  # Enhanced CLI
+uv add pg_activity  # Activity monitoring
+uv add poormanspgtune  # Configuration tuning
 ```
 
 ### Connection Pooling Setup

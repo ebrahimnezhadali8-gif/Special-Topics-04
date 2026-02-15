@@ -498,13 +498,13 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Create virtual environment
-ENV VIRTUAL_ENV=/opt/venv
-RUN python -m venv $VIRTUAL_ENV
+ENV VIRTUAL_ENV=/opt/uv
+RUN uv venv /opt/venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 # Copy requirements and install
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN uv add --no-cache-dir -r requirements.txt
 
 # Production stage
 FROM python:3.11-slim
@@ -518,8 +518,8 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy virtual environment
-COPY --from=builder /opt/venv /opt/venv
-ENV PATH="/opt/venv/bin:$PATH"
+COPY --from=builder /opt/uv /opt/uv
+ENV PATH="/opt/uv/bin:$PATH"
 
 # Copy application
 WORKDIR /app
@@ -648,8 +648,8 @@ jobs:
         python-version: '3.11'
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt
-        pip install pytest pytest-cov
+        uv add -r requirements.txt
+        uv add pytest pytest-cov
     - name: Generate protobuf
       run: python -m grpc_tools.protoc --proto_path=proto --python_out=proto --grpc_python_out=proto proto/*.proto
     - name: Run tests

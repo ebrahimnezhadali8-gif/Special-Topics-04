@@ -28,10 +28,10 @@ Create a new project for advanced authentication:
 ```bash
 mkdir advanced-auth-system
 cd advanced-auth-system
-python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
+uv venv
+source .venv/bin/activate  # or .venv\Scripts\activate on Windows
 
-pip install fastapi uvicorn authlib httpx python-jose[cryptography] passlib[bcrypt] sqlalchemy python-multipart pyotp qrcode[pil] redis
+uv add fastapi uvicorn authlib httpx python-jose[cryptography] passlib[bcrypt] sqlalchemy python-multipart pyotp qrcode[pil] redis
 
 mkdir -p app/{auth,oauth,schemas,models,api,core}
 touch app/__init__.py app/main.py app/config.py

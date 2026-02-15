@@ -8,7 +8,7 @@ Date: February 15, 2026
 | Subject | Tutorials | Workshops | Status | Issues |
 |---------|-----------|-----------|--------|--------|
 | Subject-01-Git-basics | 2 | 2 | ✅ Complete | - |
-| Subject-02-Venv-Dependency-Uvicorn | 2 | 2 | ✅ Complete | - |
+| Subject-02-uv-Dependency-Uvicorn | 2 | 2 | ✅ Complete | - |
 | Subject-03-Project-Management-CI | 2 | 2 | ✅ Complete | - |
 | Subject-04-Docker | 5 | 5 | ✅ Complete | - |
 | Subject-05-FastAPI-Fundamentals | 5 | 5 | ✅ Complete | - |

@@ -59,18 +59,19 @@ protoc --version
 
 ### Install gRPC Tools
 ```bash
+# Initialize UV project
+uv init
+
 # Create virtual environment
-python -m venv grpc-env
-source grpc-env/bin/activate  # Linux/macOS
-# or grpc-env\Scripts\activate  # Windows
+uv venv
 
 # Install gRPC packages
-pip install grpcio grpcio-tools
+uv add grpcio grpcio-tools
 
 # Additional useful packages
-pip install protobuf
-pip install grpcio-reflection  # For server reflection
-pip install grpcio-testing    # For testing
+uv add protobuf
+uv add grpcio-reflection  # For server reflection
+uv add grpcio-testing    # For testing
 ```
 
 ### Verify Installation
@@ -97,11 +98,11 @@ python test_grpc.py
 ```bash
 mkdir grpc-project
 cd grpc-project
-python -m venv venv
-source venv/bin/activate
+uv venv
+source .venv/bin/activate
 
 # Install dependencies
-pip install grpcio grpcio-tools protobuf grpcio-reflection
+uv add grpcio grpcio-tools protobuf grpcio-reflection
 
 # Create project structure
 mkdir -p proto services clients tests
@@ -114,7 +115,7 @@ touch tests/__init__.py
 ### Standard Project Structure
 ```
 grpc-project/
-├── venv/
+├── .venv/
 ├── proto/              # Protocol buffer definitions
 │   ├── __init__.py
 │   ├── service.proto
@@ -261,7 +262,7 @@ if __name__ == '__main__':
 
 ### Install Testing Dependencies
 ```bash
-pip install pytest pytest-asyncio grpcio-testing
+uv add pytest pytest-asyncio grpcio-testing
 ```
 
 ### Server Test
@@ -406,7 +407,7 @@ RUN apt-get update && apt-get install -y protobuf-compiler && rm -rf /var/lib/ap
 
 # Copy requirements and install
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN uv add --no-cache-dir -r requirements.txt
 
 # Copy source code
 COPY . .

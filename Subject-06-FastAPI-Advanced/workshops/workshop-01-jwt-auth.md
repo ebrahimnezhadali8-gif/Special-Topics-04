@@ -23,10 +23,10 @@ By the end of this workshop, you will be able to:
 ```bash
 mkdir jwt-auth-workshop
 cd jwt-auth-workshop
-python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
+uv venv
+source .venv/bin/activate  # or .venv\Scripts\activate on Windows
 
-pip install fastapi uvicorn python-jose[cryptography] passlib[bcrypt] python-multipart pydantic[email] sqlalchemy
+uv add fastapi uvicorn python-jose[cryptography] passlib[bcrypt] python-multipart pydantic[email] sqlalchemy
 
 mkdir -p app/{auth,models,schemas,routes,tests}
 touch app/__init__.py app/main.py app/database.py app/config.py

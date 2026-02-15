@@ -15,27 +15,27 @@ This guide covers advanced FastAPI development environment setup including async
 
 ### Core Dependencies
 ```bash
-pip install fastapi uvicorn[standard] pydantic[email] sqlalchemy asyncpg aiosqlite
+uv add fastapi uvicorn[standard] pydantic[email] sqlalchemy asyncpg aiosqlite
 ```
 
 ### Authentication & Security
 ```bash
-pip install python-jose[cryptography] passlib[bcrypt] python-multipart
+uv add python-jose[cryptography] passlib[bcrypt] python-multipart
 ```
 
 ### Advanced Features
 ```bash
-pip install redis aiofiles celery
+uv add redis aiofiles celery
 ```
 
 ### Testing & Development
 ```bash
-pip install pytest pytest-asyncio pytest-cov httpx coverage
+uv add pytest pytest-asyncio pytest-cov httpx coverage
 ```
 
 ### Documentation & Monitoring
 ```bash
-pip install mkdocs mkdocs-material uvicorn[standard]
+uv add mkdocs mkdocs-material uvicorn[standard]
 ```
 
 ---
@@ -102,7 +102,7 @@ async def get_db() -> AsyncSession:
 ### Alembic Setup
 ```bash
 # Install alembic
-pip install alembic
+uv add alembic
 
 # Initialize alembic
 alembic init alembic
@@ -288,7 +288,7 @@ RUN apt-get update && apt-get install -y \
 
 # Copy requirements and install Python dependencies
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN uv add --no-cache-dir -r requirements.txt
 
 # Copy application code
 COPY . .
@@ -361,7 +361,7 @@ ignore_errors = True
 
 ### Redis Setup (Optional)
 ```bash
-pip install redis
+uv add redis
 
 # Usage in FastAPI
 from redis.asyncio import Redis

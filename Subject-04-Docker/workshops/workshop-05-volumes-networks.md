@@ -116,7 +116,7 @@ docker run -d --name flask-dev \
   -p 5000:5000 \
   -e FLASK_APP=/app/app.py \
   python:3.9 \
-  sh -c "pip install flask && flask run --host=0.0.0.0"
+  sh -c "uv add flask && flask run --host=0.0.0.0"
 
 # Test the application
 curl http://localhost:5000

@@ -27,13 +27,13 @@ Create a new project that builds on the authentication system:
 ```bash
 mkdir background-tasks-workshop
 cd background-tasks-workshop
-python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
+uv venv
+source .venv/bin/activate  # or .venv\Scripts\activate on Windows
 
-pip install fastapi uvicorn python-jose[cryptography] passlib[bcrypt] python-multipart sqlalchemy redis celery
+uv add fastapi uvicorn python-jose[cryptography] passlib[bcrypt] python-multipart sqlalchemy redis celery
 
 # Optional: For email sending
-pip install aiosmtplib
+uv add aiosmtplib
 
 mkdir -p app/{tasks,models,schemas,routes,core}
 touch app/__init__.py app/main.py app/database.py app/config.py

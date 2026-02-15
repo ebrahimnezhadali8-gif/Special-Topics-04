@@ -26,9 +26,9 @@ Create a new project for this workshop:
 ```bash
 mkdir validation-workshop
 cd validation-workshop
-python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
-pip install fastapi uvicorn pydantic[email]
+uv venv
+source .venv/bin/activate  # or .venv\Scripts\activate on Windows
+uv add fastapi uvicorn pydantic[email]
 
 mkdir app
 touch app/__init__.py app/main.py app/models.py app/validation.py

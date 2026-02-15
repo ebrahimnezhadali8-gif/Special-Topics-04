@@ -25,10 +25,10 @@ By the end of this workshop, you will be able to:
 ```bash
 mkdir async-blog-api
 cd async-blog-api
-python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
+uv venv
+source .venv/bin/activate  # or .venv\Scripts\activate on Windows
 
-pip install fastapi uvicorn sqlalchemy[asyncio] asyncpg aiosqlite python-jose[cryptography] passlib[bcrypt] python-multipart redis aiofiles celery alembic pytest pytest-asyncio httpx
+uv add fastapi uvicorn sqlalchemy[asyncio] asyncpg aiosqlite python-jose[cryptography] passlib[bcrypt] python-multipart redis aiofiles celery alembic pytest pytest-asyncio httpx
 
 # Create comprehensive project structure
 mkdir -p app/{api,core,db,models,schemas,services,tasks,utils}

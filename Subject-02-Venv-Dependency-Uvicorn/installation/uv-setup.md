@@ -18,13 +18,13 @@ UV is a modern Python package manager written in Rust. This guide covers install
 winget install --id=astral-sh.uv  # If winget is available
 
 # Or using pip (alternative)
-pip install uv
+uv add uv
 ```
 
 ### Method 2: Using pip
 ```cmd
 # Open Command Prompt or PowerShell
-pip install uv
+uv add uv
 
 # Verify installation
 uv --version
@@ -53,7 +53,7 @@ brew install uv
 ### Method 2: Using pip
 ```bash
 # Install UV globally
-pip install uv
+uv add uv
 
 # Or install with pipx for better isolation
 pipx install uv
@@ -76,7 +76,7 @@ pipx install uv
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Or using pip
-pip install uv
+uv add uv
 ```
 
 ### Method 2: Snap (Ubuntu)

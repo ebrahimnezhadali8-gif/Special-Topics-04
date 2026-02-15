@@ -43,7 +43,7 @@ sudo mv include/* /usr/local/include/
 
 #### Python
 ```bash
-pip install grpcio-tools
+uv add grpcio-tools
 ```
 
 #### Go
@@ -316,7 +316,7 @@ RUN python -m grpc_tools.protoc \
 
 # Copy rest of the application
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN uv add --no-cache-dir -r requirements.txt
 
 COPY . .
 
@@ -636,7 +636,7 @@ protoc --version
 python -c "import google.protobuf; print(google.protobuf.__version__)"
 
 # Ensure compatibility
-pip install protobuf==3.20.3  # Match protoc version
+uv add protobuf==3.20.3  # Match protoc version
 ```
 
 **Generated code issues:**

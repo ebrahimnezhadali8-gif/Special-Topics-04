@@ -25,11 +25,11 @@ mkdir blog-schema-workshop
 cd blog-schema-workshop
 
 # Create virtual environment
-python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
+uv venv
+source .venv/bin/activate  # or .venv\Scripts\activate on Windows
 
 # Install dependencies
-pip install sqlalchemy psycopg2-binary alembic python-dotenv
+uv add sqlalchemy psycopg2-binary alembic python-dotenv
 
 # Create project structure
 mkdir -p app/{models,config}

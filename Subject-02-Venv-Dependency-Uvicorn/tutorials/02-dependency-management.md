@@ -10,7 +10,7 @@ By the end of this tutorial, you will understand:
 ## 📋 Prerequisites
 - Basic understanding of Python programming
 - Familiarity with installing packages via pip
-- Completed venv tutorial (Workshop 1)
+- Completed uv tutorial (Workshop 1)
 
 ---
 
@@ -67,21 +67,21 @@ pytest, black, mypy, jupyter
 
 **Developer A** (Ubuntu):
 ```bash
-pip install requests
+uv add requests
 # Gets requests 2.28.0 + compatible dependencies
 # Project works perfectly
 ```
 
 **Developer B** (Windows):
 ```bash
-pip install requests
+uv add requests
 # Gets requests 2.31.0 + different dependency versions
 # Project breaks due to compatibility issues
 ```
 
 **Production Server** (Linux):
 ```bash
-pip install requests
+uv add requests
 # Gets latest requests + newest dependencies
 # Different versions than both developers
 # Project fails in production!
@@ -104,7 +104,7 @@ pip freeze > requirements.txt
 
 # Share with team
 # requirements.txt contains ALL installed packages with exact versions
-# Other developers run: pip install -r requirements.txt
+# Other developers run: uv add -r requirements.txt
 ```
 
 **Problems:**
@@ -189,7 +189,7 @@ sqlalchemy      # database
 
 **Key Innovations:**
 1. **Written in Rust**: 10-100x faster than pip
-2. **Integrated venv management**: No separate activation needed
+2. **Integrated uv management**: No separate activation needed
 3. **Advanced dependency resolver**: Better at finding compatible versions
 4. **Lock files by default**: Reproducible builds guaranteed
 5. **Global dependency cache**: Downloads shared across projects
@@ -197,7 +197,7 @@ sqlalchemy      # database
 ### Performance Comparison
 ```bash
 # Traditional pip
-pip install fastapi uvicorn sqlalchemy
+uv add fastapi uvicorn sqlalchemy
 # Takes 30-60 seconds
 # Downloads and compiles packages
 

@@ -257,8 +257,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        python -m uv add --upgrade pip
+        uv add -r requirements.txt
 
     - name: Run tests
       run: python -m pytest test_hello.py -v
@@ -312,9 +312,9 @@ jobs:
 
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install flake8 black
+        python -m uv add --upgrade pip
+        uv add -r requirements.txt
+        uv add flake8 black
 
     - name: Lint with flake8
       run: flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
@@ -366,7 +366,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
 
     - name: Install dependencies
-      run: pip install -r requirements.txt
+      run: uv add -r requirements.txt
 
     - name: Run tests
       run: python -m pytest test_hello.py -v

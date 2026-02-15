@@ -231,7 +231,7 @@ docker-compose up -d
 
 # Install backend dependencies
 cd backend
-pip install -r requirements.txt
+uv add -r requirements.txt
 
 # Install frontend dependencies
 cd ../frontend

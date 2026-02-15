@@ -26,16 +26,16 @@ mkdir fastapi-workshop
 cd fastapi-workshop
 
 # Create virtual environment
-python -m venv venv
+uv venv
 
 # Activate virtual environment
 # Windows:
-venv\Scripts\activate
+.venv\Scripts\activate
 # Linux/macOS:
-source venv/bin/activate
+source .venv/bin/activate
 
 # Install dependencies
-pip install fastapi uvicorn
+uv add fastapi uvicorn
 
 # Create project structure
 mkdir app
@@ -632,7 +632,7 @@ def test_create_post():
 **Run tests:**
 ```bash
 # Install pytest
-pip install pytest httpx
+uv add pytest httpx
 
 # Run tests
 pytest tests/ -v
@@ -680,7 +680,7 @@ pytest tests/ --cov=app --cov-report=html
 **"Module not found" errors:**
 - Ensure virtual environment is activated
 - Check file structure and imports
-- Reinstall dependencies: `pip install -r requirements.txt`
+- Reinstall dependencies: `uv add -r requirements.txt`
 
 **Port already in use:**
 - Kill process: `lsof -ti:8000 | xargs kill -9`

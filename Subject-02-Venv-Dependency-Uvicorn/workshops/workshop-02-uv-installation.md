@@ -27,7 +27,7 @@ python --version
 #### Windows
 ```powershell
 # Using pip (recommended)
-pip install uv
+uv add uv
 
 # Verify installation
 uv --version
@@ -39,7 +39,7 @@ uv --version
 brew install uv
 
 # Or using pip
-pip install uv
+uv add uv
 
 # Verify
 uv --version
@@ -51,7 +51,7 @@ uv --version
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Or using pip
-pip install uv
+uv add uv
 
 # Verify
 uv --version
@@ -106,14 +106,14 @@ which uv
 ```bash
 # On Windows: Run as Administrator
 # On Linux/Mac: Use sudo or install to user directory
-pip install --user uv
+uv add --user uv
 ```
 
 ### Issue: SSL errors
 ```bash
 # Update Python to latest version
 # Temporarily disable SSL (not recommended for production)
-pip install --trusted-host pypi.org uv
+uv add --trusted-host pypi.org uv
 ```
 
 ---

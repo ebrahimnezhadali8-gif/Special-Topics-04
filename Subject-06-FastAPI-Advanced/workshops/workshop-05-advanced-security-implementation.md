@@ -1077,7 +1077,7 @@ RUN chown -R appuser:appuser /app
 
 # Security: Copy requirements first for better caching
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN uv add --no-cache-dir -r requirements.txt
 
 # Security: Copy application code
 COPY --chown=appuser:appuser . .

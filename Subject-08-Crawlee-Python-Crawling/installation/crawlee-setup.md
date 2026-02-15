@@ -18,16 +18,16 @@ mkdir crawlee-project
 cd crawlee-project
 
 # Create virtual environment
-python -m venv venv
+uv venv
 
 # Activate environment
 # Windows:
-venv\Scripts\activate
+.venv\Scripts\activate
 # macOS/Linux:
-source venv/bin/activate
+source .venv/bin/activate
 
 # Upgrade pip
-pip install --upgrade pip
+uv add --upgrade pip
 ```
 
 ---
@@ -36,22 +36,22 @@ pip install --upgrade pip
 
 ```bash
 # Install Crawlee Python SDK
-pip install crawlee
+uv add crawlee
 
 # Additional crawling dependencies
-pip install requests beautifulsoup4 lxml selenium webdriver-manager
+uv add requests beautifulsoup4 lxml selenium webdriver-manager
 
 # Data processing
-pip install pandas numpy
+uv add pandas numpy
 
 # Storage and databases
-pip install sqlalchemy aiosqlite
+uv add sqlalchemy aiosqlite
 
 # Configuration and logging
-pip install python-dotenv loguru
+uv add python-dotenv loguru
 
 # Development tools
-pip install black flake8 pytest httpx
+uv add black flake8 pytest httpx
 ```
 
 ---
@@ -60,7 +60,7 @@ pip install black flake8 pytest httpx
 
 ```
 crawlee-project/
-├── venv/
+├── .venv/
 ├── src/
 │   ├── __init__.py
 │   ├── crawlers/
@@ -179,7 +179,7 @@ if __name__ == "__main__":
 ### Code Quality Tools
 ```bash
 # Install pre-commit
-pip install pre-commit
+uv add pre-commit
 
 # Create .pre-commit-config.yaml
 cat > .pre-commit-config.yaml << EOF
@@ -256,7 +256,7 @@ class TestBaseCrawler:
 ### Basic Execution
 ```bash
 # Activate virtual environment
-source venv/bin/activate
+source .venv/bin/activate
 
 # Run crawler
 python src/crawlers/base_crawler.py
@@ -268,7 +268,7 @@ python -m src.crawlers.base_crawler
 ### Development Mode
 ```bash
 # Run with auto-reload (using watchfiles)
-pip install watchfiles
+uv add watchfiles
 watchfiles "python src/crawlers/base_crawler.py" src/
 ```
 
@@ -289,7 +289,7 @@ RUN apt-get update && apt-get install -y \
 
 # Copy requirements and install
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN uv add --no-cache-dir -r requirements.txt
 
 # Copy source code
 COPY . .
@@ -327,7 +327,7 @@ which python
 which pip
 
 # Reinstall dependencies
-pip install -r requirements.txt --force-reinstall
+uv add -r requirements.txt --force-reinstall
 ```
 
 ### Network Issues
@@ -345,7 +345,7 @@ env | grep -i proxy
 python -c "import crawlee; print(crawlee.__version__)"
 
 # Update Crawlee
-pip install --upgrade crawlee
+uv add --upgrade crawlee
 ```
 
 ---
