@@ -229,10 +229,14 @@ core.editor=nano
    ```
 
 3. Create a test file:
-   ```bash
-   echo "# My First Git Repository" > README.md
-   echo "print('Hello, Git!')" > hello.py
-   ```
+   - Create a file named `README.md` using your text editor (Notepad, Sublime Text, VS Code, etc.) and paste this content:
+     ```
+     # My First Git Repository
+     ```
+   - Create a file named `hello.py` using your text editor and paste this content:
+     ```
+     print('Hello, Git!')
+     ```
 
 4. Check status:
    ```bash

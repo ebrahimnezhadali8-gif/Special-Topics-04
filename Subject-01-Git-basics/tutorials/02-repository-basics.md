@@ -55,7 +55,9 @@ cd my-new-project
 git init
 
 # Create a README file
-echo "# My Project" > README.md
+# Open your text editor (Notepad, Sublime Text, VS Code, etc.)
+# Create a new file named README.md and paste this content:
+# My Project
 ```
 
 ### Method 3: Clone Existing Repository
@@ -272,7 +274,8 @@ cd my-awesome-project
 git init
 
 # Create initial files
-echo "# My Awesome Project" > README.md
+# Open your text editor and create README.md with this content:
+# My Awesome Project
 mkdir src
 echo "print('Hello, World!')" > src/main.py
 

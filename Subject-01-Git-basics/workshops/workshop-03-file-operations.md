@@ -37,13 +37,22 @@ By the end of this workshop, you will master file operations in Git, including s
    ```
 
 3. Create initial files:
-   ```bash
-   echo "# File Operations Practice" > README.md
-   echo "print('Hello, Git!')" > hello.py
-   echo "console.log('Hello, Git!');" > hello.js
-   mkdir styles
-   echo "body { color: blue; }" > styles/main.css
-   ```
+   - Create `README.md` using your text editor and paste this content:
+     ```
+     # File Operations Practice
+     ```
+   - Create `hello.py` using your text editor and paste this content:
+     ```
+     print('Hello, Git!')
+     ```
+   - Create `hello.js` using your text editor and paste this content:
+     ```
+     console.log('Hello, Git!');
+     ```
+   - Create a `styles` folder and create `main.css` inside it with this content:
+     ```
+     body { color: blue; }
+     ```
 
 ---
 
@@ -164,11 +173,11 @@ git show HEAD
 
 **Instructions:**
 1. Edit README.md:
-   ```bash
-   echo "" >> README.md
-   echo "## Project Description" >> README.md
-   echo "This project demonstrates Git file operations." >> README.md
-   ```
+   - Open `README.md` in your text editor and add this content at the end:
+     ```
+
+     ## Project Description
+     This project demonstrates Git file operations.
 
 2. Edit hello.py:
    ```bash
@@ -278,11 +287,11 @@ git diff
    ```
 
 2. Make changes to README.md:
-   ```bash
-   echo "" >> README.md
-   echo "## Installation" >> README.md
-   echo "Clone the repository and run the build script." >> README.md
-   ```
+   - Open `README.md` in your text editor and add this content at the end:
+     ```
+
+     ## Installation
+     Clone the repository and run the build script.
 
 3. Check status:
    ```bash

@@ -250,7 +250,8 @@ git config --global --list
 echo -e "\nTesting basic commands..."
 mkdir git-test && cd git-test
 git init
-echo "# Test" > README.md
+# Create README.md using your text editor and paste this content:
+# Test
 git add README.md
 git commit -m "Test commit"
 cd .. && rm -rf git-test

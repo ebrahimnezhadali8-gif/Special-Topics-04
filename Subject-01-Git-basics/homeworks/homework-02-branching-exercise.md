@@ -1,6 +1,6 @@
 ## Homework 2: Git Branching & File Operations Exercise
 
-**Due Date:** [1404-12-15]
+**Due Date:** [1404-12-05]
 
 **Objective:**
 Apply Git branching and file operations skills by creating a feature branch, implementing changes, resolving merge conflicts, and maintaining clean commit history. This assignment combines the practical skills from file operations and branching workshops.
@@ -33,15 +33,19 @@ Apply Git branching and file operations skills by creating a feature branch, imp
 3. **Set up initial project structure:**
    ```bash
    # Create initial files
-   echo "# Branching Exercise Project" > README.md
-   echo "" >> README.md
-   echo "This project demonstrates Git branching and file operations." >> README.md
+   # Create README.md using your text editor and paste this content:
+   # Branching Exercise Project
+   #
+   # This project demonstrates Git branching and file operations.
 
    # Create a simple Python project
    mkdir src
-   echo 'def main():' > src/app.py
-   echo '    print("Welcome to the branching exercise!")' >> src/app.py
-   echo '' >> src/app.py
+   ```
+   - Create `src/app.py` using your text editor and paste this content:
+     ```
+     def main():
+         print("Welcome to the branching exercise!")
+     ```
    echo 'if __name__ == "__main__":' >> src/app.py
    echo '    main()' >> src/app.py
 
@@ -171,14 +175,14 @@ Apply Git branching and file operations skills by creating a feature branch, imp
    ```
 
 4. **Update README with UI features:**
-   ```bash
-   echo "" >> README.md
-   echo "## Features" >> README.md
-   echo "- User authentication system" >> README.md
-   echo "- Console-based user interface" >> README.md
-   echo "- Configuration management" >> README.md
-   echo "- Comprehensive test suite" >> README.md
-   ```
+   - Open `README.md` in your text editor and add this content at the end:
+     ```
+
+     ## Features
+     - User authentication system
+     - Console-based user interface
+     - Configuration management
+     - Comprehensive test suite
 
 5. **Commit changes:**
    ```bash
@@ -193,12 +197,14 @@ Apply Git branching and file operations skills by creating a feature branch, imp
 ### Task 4: Create a Merge Conflict Scenario
 
 1. **Modify README.md on the UI branch to add different content:**
+   - Open `README.md` in your text editor and add this content at the end:
+     ```
+
+     ## UI Features
+     - Interactive console menu
+     - Input validation
+     - Error handling
    ```bash
-   echo "" >> README.md
-   echo "## UI Features" >> README.md
-   echo "- Interactive console menu" >> README.md
-   echo "- Input validation" >> README.md
-   echo "- Error handling" >> README.md
    git add README.md
    git commit -m "Add detailed UI features documentation"
    ```
@@ -206,12 +212,16 @@ Apply Git branching and file operations skills by creating a feature branch, imp
 2. **Switch to main branch and modify README.md differently:**
    ```bash
    git checkout main
-   echo "" >> README.md
-   echo "## Getting Started" >> README.md
-   echo "1. Clone the repository" >> README.md
-   echo "2. Install dependencies: pip install -r requirements.txt" >> README.md
-   echo "3. Run tests: python -m pytest" >> README.md
-   echo "4. Run the application: python src/app.py" >> README.md
+   ```
+   - Open `README.md` in your text editor and add this content at the end:
+     ```
+
+     ## Getting Started
+     1. Clone the repository
+     2. Install dependencies: pip install -r requirements.txt
+     3. Run tests: python -m pytest
+     4. Run the application: python src/app.py
+   ```bash
    git add README.md
    git commit -m "Add getting started instructions to README"
    ```
@@ -256,29 +266,29 @@ Apply Git branching and file operations skills by creating a feature branch, imp
    ```
 
 4. **Resolve the conflict by combining both changes:**
-   ```bash
-   # Create a new README that includes both sections
-   echo "# Branching Exercise Project" > README.md
-   echo "" >> README.md
-   echo "This project demonstrates Git branching and file operations." >> README.md
-   echo "" >> README.md
-   echo "## Getting Started" >> README.md
-   echo "1. Clone the repository" >> README.md
-   echo "2. Install dependencies: pip install -r requirements.txt" >> README.md
-   echo "3. Run tests: python -m pytest" >> README.md
-   echo "4. Run the application: python src/app.py" >> README.md
-   echo "" >> README.md
-   echo "## Features" >> README.md
-   echo "- User authentication system" >> README.md
-   echo "- Console-based user interface" >> README.md
-   echo "- Configuration management" >> README.md
-   echo "- Comprehensive test suite" >> README.md
-   echo "" >> README.md
-   echo "## UI Features" >> README.md
-   echo "- Interactive console menu" >> README.md
-   echo "- Input validation" >> README.md
-   echo "- Error handling" >> README.md
-   ```
+   - Open `README.md` in your text editor and replace its content with this combined version:
+     ```
+     # Branching Exercise Project
+
+     This project demonstrates Git branching and file operations.
+
+     ## Getting Started
+     1. Clone the repository
+     2. Install dependencies: pip install -r requirements.txt
+     3. Run tests: python -m pytest
+     4. Run the application: python src/app.py
+
+     ## Features
+     - User authentication system
+     - Console-based user interface
+     - Configuration management
+     - Comprehensive test suite
+
+     ## UI Features
+     - Interactive console menu
+     - Input validation
+     - Error handling
+     ```
 
 5. **Complete the merge:**
    ```bash
@@ -450,12 +460,14 @@ Special-Topics-04/
 mkdir -p Homeworks/Subject-01-Git-basics/homework-02-branching-exercise/screenshots
 
 # Create documentation file
-echo "# Homework 2 Submission: Git Branching & File Operations" > Homeworks/Subject-01-Git-basics/homework-02-branching-exercise/README.md
-echo "" >> Homeworks/Subject-01-Git-basics/homework-02-branching-exercise/README.md
-echo "## Student Information" >> Homeworks/Subject-01-Git-basics/homework-02-branching-exercise/README.md
-echo "- Name: YOUR_FULL_NAME" >> Homeworks/Subject-01-Git-basics/homework-02-branching-exercise/README.md
-echo "- GitHub Username: YOUR_USERNAME" >> Homeworks/Subject-01-Git-basics/homework-02-branching-exercise/README.md
-echo "- Date: $(date)" >> Homeworks/Subject-01-Git-basics/homework-02-branching-exercise/README.md
+# Create Homeworks/Subject-01-Git-basics/homework-02-branching-exercise/README.md
+# using your text editor and paste this content:
+# Homework 2 Submission: Git Branching & File Operations
+#
+# ## Student Information
+# - Name: YOUR_FULL_NAME
+# - GitHub Username: YOUR_USERNAME
+# - Date: [Today's Date]
 ```
 
 #### Step 4: Add Your Homework Files

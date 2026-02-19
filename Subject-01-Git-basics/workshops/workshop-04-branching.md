@@ -44,7 +44,12 @@ feature:           └─ E ── F
 mkdir git-branching-practice
 cd git-branching-practice
 git init
-echo "# Branching Practice" > README.md
+```
+- Create `README.md` using your text editor and paste this content:
+  ```
+  # Branching Practice
+  ```
+```bash
 git add README.md
 git commit -m "Initial commit"
 ```
@@ -282,12 +287,12 @@ git branch
    ```
 
 2. Modify README.md:
-   ```bash
-   echo "" >> README.md
-   echo "## Features (from feature branch)" >> README.md
-   echo "- Login system" >> README.md
-   echo "- User dashboard" >> README.md
-   ```
+   - Open `README.md` in your text editor and add this content at the end:
+     ```
+
+     ## Features (from feature branch)
+     - Login system
+     - User dashboard
 
 3. Commit the change:
    ```bash
@@ -301,12 +306,12 @@ git branch
    ```
 
 5. Make a different change to README.md on main:
-   ```bash
-   echo "" >> README.md
-   echo "## Project Info" >> README.md
-   echo "- Version: 1.0" >> README.md
-   echo "- Language: Python" >> README.md
-   ```
+   - Open `README.md` in your text editor and add this content at the end:
+     ```
+
+     ## Project Info
+     - Version: 1.0
+     - Language: Python
 
 6. Commit this change:
    ```bash
@@ -369,18 +374,18 @@ Unmerged paths:
 ```
 
 3. Edit the file to resolve conflict:
-   ```bash
-   # Replace the conflict markers with combined content
-   echo "# Branching Practice" > README.md
-   echo "" >> README.md
-   echo "## Project Info" >> README.md
-   echo "- Version: 1.0" >> README.md
-   echo "- Language: Python" >> README.md
-   echo "" >> README.md
-   echo "## Features" >> README.md
-   echo "- Login system" >> README.md
-   echo "- User dashboard" >> README.md
-   ```
+   - Open `README.md` in your text editor and replace the conflict markers with this combined content:
+     ```
+     # Branching Practice
+
+     ## Project Info
+     - Version: 1.0
+     - Language: Python
+
+     ## Features
+     - Login system
+     - User dashboard
+     ```
 
 4. Mark conflict as resolved:
    ```bash

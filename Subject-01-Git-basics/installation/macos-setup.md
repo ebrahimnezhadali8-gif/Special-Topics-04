@@ -204,7 +204,8 @@ ssh -T git@github.com
 # Create a test repository
 mkdir git-test && cd git-test
 git init
-echo "# Test Repository" > README.md
+# Create README.md using your text editor and paste this content:
+# Test Repository
 git add README.md
 git commit -m "Initial commit"
 cd .. && rm -rf git-test

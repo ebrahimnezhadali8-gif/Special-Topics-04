@@ -131,15 +131,17 @@ nothing to commit (create/copy files and use "git add" to track)
 
 **Instructions:**
 1. Create a README.md file:
-   ```bash
-   echo "# My First Git Repository" > README.md
-   echo "" >> README.md
-   echo "This is my first project using Git version control." >> README.md
-   echo "" >> README.md
-   echo "## Features" >> README.md
-   echo "- Feature 1" >> README.md
-   echo "- Feature 2" >> README.md
-   ```
+   - Open your text editor (Notepad, Sublime Text, VS Code, etc.)
+   - Create a new file named `README.md` and paste this content:
+     ```
+     # My First Git Repository
+
+     This is my first project using Git version control.
+
+     ## Features
+     - Feature 1
+     - Feature 2
+     ```
 
 2. Check the file contents:
    ```bash
@@ -194,11 +196,12 @@ Welcome to version control!
    ```
 
 3. Create a notes file:
-   ```bash
-   echo "# Development Notes" > NOTES.md
-   echo "" >> NOTES.md
-   echo "This file contains notes about the project development." >> NOTES.md
-   ```
+   - Open your text editor and create a new file named `NOTES.md` with this content:
+     ```
+     # Development Notes
+
+     This file contains notes about the project development.
+     ```
 
 **Check your project structure:**
 ```bash
@@ -324,11 +327,11 @@ abc1234 Initial commit: Set up basic project structure
 
 **Instructions:**
 1. Edit the README.md file:
-   ```bash
-   echo "" >> README.md
-   echo "## How to Run" >> README.md
-   echo "Run the application with: \`python app.py\`" >> README.md
-   ```
+   - Open `README.md` in your text editor and add this content at the end:
+     ```
+
+     ## How to Run
+     Run the application with: `python app.py`
 
 2. Check status:
    ```bash

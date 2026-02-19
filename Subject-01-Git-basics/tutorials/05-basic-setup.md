@@ -273,10 +273,11 @@ ssh-keyscan -H github.com >> ~/.ssh/known_hosts
    ```
 
 3. **Create a test file:**
-   ```bash
-   echo "# Git Setup Test" > README.md
-   echo "This repository tests Git installation and configuration." >> README.md
-   ```
+   - Create `README.md` using your text editor and paste this content:
+     ```
+     # Git Setup Test
+     This repository tests Git installation and configuration.
+     ```
 
 4. **Make your first commit:**
    ```bash
