@@ -27,7 +27,7 @@ python --version
 #### Windows
 ```powershell
 # Using pip (recommended)
-uv add uv
+pip install uv
 
 # Verify installation
 uv --version
@@ -39,7 +39,7 @@ uv --version
 brew install uv
 
 # Or using pip
-uv add uv
+pip install uv
 
 # Verify
 uv --version
@@ -47,11 +47,11 @@ uv --version
 
 #### Linux (Ubuntu/Debian)
 ```bash
-# Using official installer
+# Using official installer (recommended)
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Or using pip
-uv add uv
+pip install uv
 
 # Verify
 uv --version
@@ -86,6 +86,7 @@ uv cache dir
 - [ ] UV command is available
 - [ ] `uv --version` shows version number
 - [ ] `uv --help` displays help information
+- [ ] `uv python list` shows available Python versions
 - [ ] Cache directory is accessible
 
 ---
@@ -96,24 +97,26 @@ uv cache dir
 ```bash
 # Restart terminal/command prompt
 # Check if UV is in PATH
-echo $PATH
+echo $PATH  # Linux/Mac
+echo %PATH% # Windows
 
 # Try full path (find where UV was installed)
-which uv
+which uv   # Linux/Mac
+where uv   # Windows
 ```
 
 ### Issue: Permission denied
 ```bash
 # On Windows: Run as Administrator
 # On Linux/Mac: Use sudo or install to user directory
-uv add --user uv
+pip install --user uv
 ```
 
 ### Issue: SSL errors
 ```bash
 # Update Python to latest version
 # Temporarily disable SSL (not recommended for production)
-uv add --trusted-host pypi.org uv
+pip install --trusted-host pypi.org uv
 ```
 
 ---
@@ -121,9 +124,11 @@ uv add --trusted-host pypi.org uv
 ## 🎯 Next Steps
 
 With UV installed, you can now:
-- Create your first UV project: `uv init myproject`
-- Add dependencies: `uv add fastapi`
-- Run commands: `uv run python main.py`
+- Create your first modern UV project: `uv init myproject` (creates pyproject.toml, .python-version, and virtual environment)
+- Add dependencies: `uv add fastapi uvicorn`
+- Run commands in the environment: `uv run python main.py`
+- Check available Python versions: `uv python list`
+- Create virtual environments: `uv venv`
 
 ---
 
