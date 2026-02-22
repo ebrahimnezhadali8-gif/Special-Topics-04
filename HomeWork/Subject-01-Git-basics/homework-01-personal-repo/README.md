@@ -222,6 +222,4 @@ in the Software without restriction, including without limitation the rights...
 - PostgreSQL for persistence
 - Inspired by common calendar app patterns
 
-## Contact
-If you have questions, open an issue or contact the repository owner.
 
