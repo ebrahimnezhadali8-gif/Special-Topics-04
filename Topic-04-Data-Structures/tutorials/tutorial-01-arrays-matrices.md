@@ -1,0 +1,253 @@
+# Tutorial 1: Arrays and Matrices in Python
+
+**Section**: 6 - Arrays and Matrices (30 min)
+**Level**: Beginner
+**Prerequisites**: Basic Python knowledge (variables, loops, functions)
+
+---
+
+## 📋 Learning Objectives
+
+By the end of this tutorial, you will be able to:
+
+1. **Create and use arrays** (lists in Python)
+2. **Access array elements** by position
+3. **Create and use matrices** (2D arrays)
+4. **Perform basic array and matrix operations**
+
+---
+
+## 📚 Table of Contents
+
+1. [What are Arrays?](#what-are-arrays)
+2. [Creating Arrays](#creating-arrays)
+3. [Using Arrays](#using-arrays)
+4. [What are Matrices?](#what-are-matrices)
+5. [Creating Matrices](#creating-matrices)
+6. [Using Matrices](#using-matrices)
+
+---
+
+## 🔸 What are Arrays?
+
+Arrays are containers that hold multiple values. In Python, we use **lists** as arrays. Arrays help us work with collections of data.
+
+### Creating Arrays
+
+```python
+# Empty array
+empty = []
+
+# Array with numbers
+numbers = [1, 2, 3, 4, 5]
+
+# Array with text
+fruits = ["apple", "banana", "orange"]
+```
+
+### Using Arrays
+
+```python
+# Print the array
+print(numbers)  # [1, 2, 3, 4, 5]
+
+# Count items in array
+print(len(numbers))  # 5
+```
+
+---
+
+---
+
+## 🔸 Using Arrays
+
+### Accessing Array Elements
+
+```python
+numbers = [10, 20, 30, 40, 50]
+
+# Get first element (position 0)
+first = numbers[0]  # 10
+
+# Get second element (position 1)
+second = numbers[1]  # 20
+
+# Get last element
+last = numbers[4]  # 50
+```
+
+### Changing Array Elements
+
+```python
+numbers = [10, 20, 30, 40, 50]
+
+# Change first element
+numbers[0] = 100
+
+print(numbers)  # [100, 20, 30, 40, 50]
+```
+
+### Adding Elements to Arrays
+
+```python
+numbers = [10, 20, 30]
+
+# Add to end
+numbers.append(40)
+print(numbers)  # [10, 20, 30, 40]
+
+# Add at specific position
+numbers.insert(1, 15)
+print(numbers)  # [10, 15, 20, 30, 40]
+```
+
+---
+
+## 🔸 What are Matrices?
+
+Matrices are tables of numbers arranged in rows and columns. Think of them as arrays of arrays. We use matrices for grids, tables, and 2D data.
+
+### Creating Matrices
+
+```python
+# Simple 2x2 matrix
+matrix = [
+    [1, 2],
+    [3, 4]
+]
+
+# 3x3 matrix
+grid = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+```
+
+---
+
+## 🔸 Creating Matrices
+
+### Creating Different Types of Matrices
+
+```python
+# Zero matrix (all zeros)
+zeros = [
+    [0, 0, 0],
+    [0, 0, 0]
+]
+
+# Identity matrix (1s on diagonal)
+identity = [
+    [1, 0],
+    [0, 1]
+]
+```
+
+### Matrix Dimensions
+
+```python
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6]
+]
+
+# Count rows
+rows = len(matrix)  # 2
+
+# Count columns
+cols = len(matrix[0])  # 3
+
+print(f"Matrix has {rows} rows and {cols} columns")
+```
+
+---
+
+## 🔸 Using Matrices
+
+### Accessing Matrix Elements
+
+```python
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+# Get element at row 0, column 1
+element = matrix[0][1]  # 2
+
+# Get element at row 2, column 2
+corner = matrix[2][2]  # 9
+
+# Get entire row
+first_row = matrix[0]  # [1, 2, 3]
+```
+
+### Changing Matrix Elements
+
+```python
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6]
+]
+
+# Change element at row 0, column 0
+matrix[0][0] = 10
+
+print(matrix)
+# [[10, 2, 3], [4, 5, 6]]
+```
+
+### Matrix Rows and Columns
+
+```python
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6]
+]
+
+# Get all rows
+for row in matrix:
+    print(row)
+# [1, 2, 3]
+# [4, 5, 6]
+
+# Get first column
+first_column = []
+for row in matrix:
+    first_column.append(row[0])
+
+print(first_column)  # [1, 4]
+```
+
+---
+
+## 🎯 Practice Exercises
+
+### Exercise 1: Array Basics
+Create an array with numbers 1-5 and print each element.
+
+### Exercise 2: Matrix Basics
+Create a 2x2 matrix and print all elements.
+
+### Exercise 3: Array Modification
+Start with array `[1, 2, 3]`, add 4 to the end, then change the first element to 10.
+
+### Exercise 4: Matrix Access
+Create a 3x3 matrix and print the element at row 1, column 2.
+
+---
+
+## 🎯 Key Takeaways
+
+1. **Arrays store multiple values** in a list
+2. **Access elements by position** (starting from 0)
+3. **Matrices are arrays of arrays** (rows and columns)
+4. **Use simple operations** to work with data
+
+---
+
+**Tutorial Version**: 2.0 - Simplified
+**Last Updated**: February 2026
+**Estimated Reading Time**: 15 minutes
