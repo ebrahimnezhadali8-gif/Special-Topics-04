@@ -20,82 +20,82 @@ By the end of this course, students will be able to:
 ## Course Structure
 
 ### Section 1: Essential Tools & Workflows
-**Subject 1: Git Basics & Project Workflows**
+**Topic 1: Git Basics & Project Workflows**
 - Version control fundamentals
 - Branching strategies and merge conflict resolution
 - Team collaboration workflows
 - Pull request management
 
-**Subject 2: Virtual Environments, Dependency Management & Uvicorn**
+**Topic 2: Virtual Environments, Dependency Management & Uvicorn**
 - Python virtual environments
 - Dependency management with requirements.txt/pyproject.toml
 - ASGI application deployment with Uvicorn
 - Reproducible development environments
 
-**Subject 3: Project Management with Issues/Boards and Basic CI**
+**Topic 3: Project Management with Issues/Boards and Basic CI**
 - GitHub Issues and project boards
 - Milestone planning and issue tracking
 - Continuous Integration with GitHub Actions
 - Automated testing and linting
 
-**Subject 4: Dockerizing Projects & Docker Fundamentals**
-- Container fundamentals and Docker images
-- Dockerfile creation and multi-stage builds
-- Docker Compose for multi-service applications
-- Container networking and volumes
+**Topic 4: Python Data Structures and Type Systems**
+- Arrays and matrices manipulation
+- Lists, sets, and dictionaries operations
+- JSON data handling and processing
+- Pattern matching with match statements
 
 ### Section 2: Backend Development with FastAPI
-**Subject 5: FastAPI Fundamentals (Routes, Pydantic Models)**
+**Topic 5: FastAPI Fundamentals (Routes, Pydantic Models)**
 - REST API design principles
 - Request/response modeling with Pydantic
 - Input validation and error handling
 - Dependency injection patterns
 
-**Subject 6: FastAPI Advanced: Async, Background Tasks, Authentication**
+**Topic 6: FastAPI Advanced: Async, Background Tasks, Authentication**
 - Asynchronous request handling
 - Background task processing
 - JWT-based authentication
 - Security best practices
 
-**Subject 7: Introduction to gRPC and Proto Design**
+**Topic 7: Introduction to gRPC and Proto Design**
 - REST vs gRPC comparison
 - Protocol Buffer (.proto) file design
 - gRPC service implementation
 - Client-server communication patterns
 
 ### Section 3: Data Pipeline & Database Engineering
-**Subject 8: Crawlee and Crawling Persian Websites (Python)**
+**Topic 8: Crawlee and Crawling Persian Websites (Python)**
 - Web crawling fundamentals with Crawlee Python SDK
 - Respectful crawling and robots.txt compliance
 - Persian content extraction and processing
 - Data deduplication and pagination handling
 
-**Subject 9: Storing Data in PostgreSQL and Schema Design**
+**Topic 9: Storing Data in PostgreSQL and Schema Design**
 - Relational database design principles
 - PostgreSQL schema creation and migrations
 - SQLAlchemy ORM integration
 - Database indexing strategies
 
-**Subject 10: Building a Pipeline: Crawlee → DB → API**
+**Topic 10: Building a Pipeline: Crawlee → DB → API**
 - ETL (Extract, Transform, Load) pipeline design
 - Data normalization and processing
 - API endpoint creation for data access
 - Error handling and logging in pipelines
 
-**Subject 11: Serving with PostgreSQL and Optimization**
+**Topic 11: Serving with PostgreSQL and Optimization**
 - Database connection pooling
 - Query optimization and performance tuning
 - Database backups and read replicas
 - Monitoring and profiling database operations
 
 ### Section 4: Frontend & Integration
-**Subject 12: Loveblae and AI-assisted Frontend Generation**
+**Topic 12: Loveblae and AI-assisted Frontend Generation**
 - AI-powered frontend development
 - API integration with generated interfaces
 - Modern UI/UX principles
 - Rapid prototyping techniques
 
-**Subject 13: Final Project and Evaluation**
+**Topic 13: Final Project and Evaluation**
 - End-to-end application development
 - System architecture design
 - Project documentation and presentation
@@ -137,12 +137,12 @@ The culminating project requires students to:
 - **Programming Knowledge**: Basic Python programming (variables, functions, classes)
 - **Command Line**: Familiarity with terminal/command prompt operations
 - **Web Concepts**: Understanding of HTTP, APIs, and web architecture
-- **Git**: Basic understanding of version control (covered in Subject 1)
+- **Git**: Basic understanding of version control (covered in Topic 1)
 - **Docker**: Computer capable of running Docker containers
 
 ### Software Requirements
 - **Python 3.8+**: Core programming language for the course
-- **Git**: Version control system (installation covered in Subject 1)
+- **Git**: Version control system (installation covered in Topic 1)
 - **Docker & Docker Compose**: Containerization platform
 - **Text Editor/IDE**: VS Code, PyCharm, or similar (VS Code recommended)
 - **Web Browser**: Modern browser for web development and testing
@@ -161,7 +161,7 @@ The culminating project requires students to:
 ## Course Materials
 
 All course materials, code examples, and assignments are available in this repository. Each subject folder contains:
-- `README.md`: Subject overview, goals, and assignments
+- `README.md`: Topic overview, goals, and assignments
 - `tutorials/`: Conceptual learning materials and reference guides
 - `workshops/`: Hands-on practical exercises and labs
 - `homeworks/`: Individual assignments and projects
@@ -180,10 +180,10 @@ All course materials, code examples, and assignments are available in this repos
 2. **Set up your development environment**
    - Install Python 3.8+ and Docker
    - Follow installation guides in each subject's `installation/` folder
-   - Set up Git and GitHub (see Subject 1)
+   - Set up Git and GitHub (see Topic 1)
 
 3. **Follow subjects in numerical order**
-   - Start with Subject 1: Git Basics & Project Workflows
+   - Start with Topic 1: Git Basics & Project Workflows
    - Each subject builds on previous knowledge
    - Complete tutorials before attempting workshops
 
@@ -211,7 +211,7 @@ All homework assignments must be submitted via GitHub using the fork-based workf
 **Example structure for homework submission:**
 ```
 Homeworks/
-└── Subject-01-Git-basics/
+└── Topic-01-Git-basics/
     └── homework-02-branching-exercise/
         ├── README.md (your documentation)
         ├── screenshots/ (all required screenshots)
